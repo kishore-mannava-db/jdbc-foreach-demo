@@ -40,15 +40,15 @@ Loads 10 AdventureWorksLT tables (5 partitioned, 5 non-partitioned) in parallel 
 - Databricks workspace with Unity Catalog and serverless compute enabled
 - Azure SQL Server with `AdventureWorksLT` sample database
 - SQL login with `db_datareader` role on the database
-- Databricks CLI configured with a profile (e.g., `pii-demo`)
+
 
 ## Steps to Replay
 
 ### 1. Upload notebooks to workspace
 
 ```bash
-WORKSPACE_PATH="/Workspace/Users/<your-email>/whitecase"
-PROFILE="pii-demo"
+WORKSPACE_PATH="/Workspace/Users/<your-email>/demo"
+PROFILE="demo"
 
 databricks workspace import "$WORKSPACE_PATH/setup" \
   --file 01_setup.py --language PYTHON --format SOURCE --overwrite --profile $PROFILE

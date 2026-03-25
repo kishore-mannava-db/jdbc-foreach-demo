@@ -1,152 +1,160 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 620" font-family="Inter, Segoe UI, Helvetica, Arial, sans-serif">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 620" font-family="DM Sans, Inter, Segoe UI, Helvetica, Arial, sans-serif">
   <defs>
+    <!-- Databricks brand colors: Red #FF3621, dark #1B3139, navy #00394D, warm gray -->
     <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
-      <stop offset="0%" stop-color="#0f1117"/>
-      <stop offset="100%" stop-color="#1a1d2e"/>
+      <stop offset="0%" stop-color="#FFFFFF"/>
+      <stop offset="100%" stop-color="#F5F7FA"/>
     </linearGradient>
     <linearGradient id="card" x1="0" y1="0" x2="0" y2="1">
-      <stop offset="0%" stop-color="#1e2235"/>
-      <stop offset="100%" stop-color="#171a2c"/>
+      <stop offset="0%" stop-color="#FFFFFF"/>
+      <stop offset="100%" stop-color="#FAFBFC"/>
     </linearGradient>
-    <linearGradient id="accent" x1="0" y1="0" x2="1" y2="1">
+    <linearGradient id="dbRed" x1="0" y1="0" x2="1" y2="1">
       <stop offset="0%" stop-color="#FF3621"/>
-      <stop offset="100%" stop-color="#FF6A4D"/>
+      <stop offset="100%" stop-color="#E8350F"/>
     </linearGradient>
-    <linearGradient id="blue" x1="0" y1="0" x2="1" y2="1">
-      <stop offset="0%" stop-color="#1B96FF"/>
-      <stop offset="100%" stop-color="#4DB8FF"/>
+    <linearGradient id="dbNavy" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#1B3139"/>
+      <stop offset="100%" stop-color="#00394D"/>
     </linearGradient>
-    <linearGradient id="green" x1="0" y1="0" x2="1" y2="1">
+    <linearGradient id="dbGreen" x1="0" y1="0" x2="1" y2="1">
       <stop offset="0%" stop-color="#00A972"/>
-      <stop offset="100%" stop-color="#34D399"/>
+      <stop offset="100%" stop-color="#009963"/>
     </linearGradient>
-    <linearGradient id="purple" x1="0" y1="0" x2="1" y2="1">
-      <stop offset="0%" stop-color="#7C3AED"/>
-      <stop offset="100%" stop-color="#A78BFA"/>
+    <linearGradient id="azureBlue" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#0078D4"/>
+      <stop offset="100%" stop-color="#106EBE"/>
     </linearGradient>
-    <filter id="shadow" x="-5%" y="-5%" width="110%" height="120%">
-      <feDropShadow dx="0" dy="4" stdDeviation="8" flood-color="#000" flood-opacity="0.4"/>
+    <filter id="shadow" x="-3%" y="-3%" width="106%" height="112%">
+      <feDropShadow dx="0" dy="2" stdDeviation="4" flood-color="#1B3139" flood-opacity="0.08"/>
     </filter>
-    <filter id="glow" x="-20%" y="-20%" width="140%" height="140%">
-      <feGaussianBlur stdDeviation="6" result="blur"/>
-      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    <filter id="shadowLg" x="-3%" y="-3%" width="106%" height="112%">
+      <feDropShadow dx="0" dy="3" stdDeviation="6" flood-color="#1B3139" flood-opacity="0.12"/>
     </filter>
-    <marker id="arrowWhite" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto">
-      <polygon points="0 0, 10 3.5, 0 7" fill="#8892a8"/>
+    <marker id="arrowGray" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#8C9BAB"/>
+    </marker>
+    <marker id="arrowRed" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#FF3621"/>
     </marker>
     <marker id="arrowGreen" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto">
-      <polygon points="0 0, 10 3.5, 0 7" fill="#34D399"/>
+      <polygon points="0 0, 10 3.5, 0 7" fill="#00A972"/>
     </marker>
   </defs>
 
   <!-- Background -->
   <rect width="1000" height="620" fill="url(#bg)" rx="12"/>
+  <!-- Subtle top accent bar -->
+  <rect width="1000" height="4" fill="#FF3621" rx="2"/>
 
   <!-- Title -->
-  <text x="500" y="40" text-anchor="middle" fill="#FF3621" font-size="18" font-weight="700" letter-spacing="1">JDBC FOR EACH DEMO</text>
-  <text x="500" y="60" text-anchor="middle" fill="#8892a8" font-size="12">Parallel JDBC ingestion from Azure SQL Server to Databricks Unity Catalog</text>
+  <text x="500" y="40" text-anchor="middle" fill="#1B3139" font-size="18" font-weight="700" letter-spacing="0.5">JDBC FOR EACH DEMO</text>
+  <text x="500" y="60" text-anchor="middle" fill="#5A6B7B" font-size="12">Parallel JDBC ingestion from Azure SQL Server to Databricks Unity Catalog</text>
 
   <!-- ======================= SOURCE (LEFT) ======================= -->
-  <rect x="30" y="220" width="180" height="180" rx="10" fill="url(#card)" stroke="#2d3250" stroke-width="1" filter="url(#shadow)"/>
-  <rect x="30" y="220" width="180" height="32" rx="10" fill="url(#blue)" opacity="0.15"/>
-  <text x="120" y="241" text-anchor="middle" fill="#4DB8FF" font-size="11" font-weight="600">AZURE SQL SERVER</text>
-  <text x="120" y="270" text-anchor="middle" fill="#c8cfe0" font-size="9">AdventureWorksLT</text>
-  <text x="50" y="295" fill="#8892a8" font-size="9">SalesLT.Customer</text>
-  <text x="50" y="311" fill="#8892a8" font-size="9">SalesLT.SalesOrderHeader</text>
-  <text x="50" y="327" fill="#8892a8" font-size="9">SalesLT.SalesOrderDetail</text>
-  <text x="50" y="343" fill="#8892a8" font-size="9">SalesLT.Product</text>
-  <text x="50" y="359" fill="#8892a8" font-size="9">SalesLT.Address</text>
-  <text x="50" y="375" fill="#6b7280" font-size="9" font-style="italic">+ 5 more tables</text>
+  <rect x="30" y="220" width="180" height="180" rx="10" fill="url(#card)" stroke="#D8DFE6" stroke-width="1" filter="url(#shadow)"/>
+  <rect x="30" y="220" width="180" height="32" rx="10" fill="#0078D4" opacity="0.08"/>
+  <rect x="30" y="220" width="180" height="3" rx="1" fill="#0078D4"/>
+  <text x="120" y="242" text-anchor="middle" fill="#0078D4" font-size="11" font-weight="600">AZURE SQL SERVER</text>
+  <text x="120" y="270" text-anchor="middle" fill="#1B3139" font-size="9" font-weight="500">AdventureWorksLT</text>
+  <text x="50" y="295" fill="#5A6B7B" font-size="9">SalesLT.Customer</text>
+  <text x="50" y="311" fill="#5A6B7B" font-size="9">SalesLT.SalesOrderHeader</text>
+  <text x="50" y="327" fill="#5A6B7B" font-size="9">SalesLT.SalesOrderDetail</text>
+  <text x="50" y="343" fill="#5A6B7B" font-size="9">SalesLT.Product</text>
+  <text x="50" y="359" fill="#5A6B7B" font-size="9">SalesLT.Address</text>
+  <text x="50" y="375" fill="#8C9BAB" font-size="9" font-style="italic">+ 5 more tables</text>
 
   <!-- Arrow: Source -> Workflow -->
-  <line x1="210" y1="310" x2="270" y2="310" stroke="#8892a8" stroke-width="1.5" stroke-dasharray="6,4" marker-end="url(#arrowWhite)"/>
-  <text x="240" y="300" text-anchor="middle" fill="#8892a8" font-size="8">JDBC</text>
+  <line x1="210" y1="310" x2="270" y2="310" stroke="#8C9BAB" stroke-width="1.5" stroke-dasharray="6,4" marker-end="url(#arrowGray)"/>
+  <text x="240" y="300" text-anchor="middle" fill="#5A6B7B" font-size="8" font-weight="500">JDBC</text>
 
   <!-- ======================= WORKFLOW (CENTER) ======================= -->
-  <rect x="280" y="90" width="430" height="450" rx="12" fill="url(#card)" stroke="#2d3250" stroke-width="1" filter="url(#shadow)"/>
-  <rect x="280" y="90" width="430" height="36" rx="12" fill="url(#accent)" opacity="0.12"/>
-  <text x="495" y="114" text-anchor="middle" fill="#FF6A4D" font-size="13" font-weight="700">DATABRICKS WORKFLOW — SERVERLESS</text>
+  <rect x="280" y="90" width="430" height="450" rx="12" fill="url(#card)" stroke="#D8DFE6" stroke-width="1" filter="url(#shadowLg)"/>
+  <rect x="280" y="90" width="430" height="3" rx="1" fill="#FF3621"/>
+  <rect x="280" y="90" width="430" height="36" rx="12" fill="#FF3621" opacity="0.05"/>
+  <text x="495" y="114" text-anchor="middle" fill="#FF3621" font-size="13" font-weight="700">DATABRICKS WORKFLOW — SERVERLESS</text>
 
   <!-- Step 1: Setup Notebook -->
-  <rect x="310" y="145" width="370" height="54" rx="8" fill="#1a1d2e" stroke="#374163" stroke-width="1"/>
-  <circle cx="334" cy="172" r="12" fill="url(#accent)" opacity="0.9"/>
+  <rect x="310" y="145" width="370" height="54" rx="8" fill="#F5F7FA" stroke="#D8DFE6" stroke-width="1"/>
+  <circle cx="334" cy="172" r="12" fill="url(#dbRed)"/>
   <text x="334" y="176" text-anchor="middle" fill="#fff" font-size="10" font-weight="700">1</text>
-  <text x="356" y="165" fill="#e2e8f0" font-size="11" font-weight="600">01_setup.py</text>
-  <text x="356" y="182" fill="#8892a8" font-size="9">Create km_demo.sales + km_demo.reference schemas</text>
-  <text x="356" y="194" fill="#8892a8" font-size="9">Validate JDBC connectivity to Azure SQL</text>
+  <text x="356" y="165" fill="#1B3139" font-size="11" font-weight="600">01_setup.py</text>
+  <text x="356" y="182" fill="#5A6B7B" font-size="9">Create km_demo.sales + km_demo.reference schemas</text>
+  <text x="356" y="194" fill="#5A6B7B" font-size="9">Validate JDBC connectivity to Azure SQL</text>
 
   <!-- Arrow 1->2 -->
-  <line x1="495" y1="199" x2="495" y2="220" stroke="#8892a8" stroke-width="1" stroke-dasharray="4,3" marker-end="url(#arrowWhite)"/>
+  <line x1="495" y1="199" x2="495" y2="220" stroke="#8C9BAB" stroke-width="1" stroke-dasharray="4,3" marker-end="url(#arrowGray)"/>
 
   <!-- Step 2: Generate Table List -->
-  <rect x="310" y="224" width="370" height="70" rx="8" fill="#1a1d2e" stroke="#374163" stroke-width="1"/>
-  <circle cx="334" cy="259" r="12" fill="url(#accent)" opacity="0.9"/>
+  <rect x="310" y="224" width="370" height="70" rx="8" fill="#F5F7FA" stroke="#D8DFE6" stroke-width="1"/>
+  <circle cx="334" cy="259" r="12" fill="url(#dbRed)"/>
   <text x="334" y="263" text-anchor="middle" fill="#fff" font-size="10" font-weight="700">2</text>
-  <text x="356" y="245" fill="#e2e8f0" font-size="11" font-weight="600">02_generate_table_list.py</text>
-  <text x="356" y="262" fill="#8892a8" font-size="9">Define 10 table configs (5 partitioned, 5 single)</text>
-  <text x="356" y="275" fill="#8892a8" font-size="9">Deploy workflow via Jobs API (optional)</text>
-  <text x="356" y="288" fill="#34D399" font-size="9">taskValues.set("table_list", [...]) → JSON array</text>
+  <text x="356" y="245" fill="#1B3139" font-size="11" font-weight="600">02_generate_table_list.py</text>
+  <text x="356" y="262" fill="#5A6B7B" font-size="9">Define 10 table configs (5 partitioned, 5 single)</text>
+  <text x="356" y="275" fill="#5A6B7B" font-size="9">Deploy workflow via Jobs API (optional)</text>
+  <text x="356" y="288" fill="#00A972" font-size="9" font-weight="500">taskValues.set("table_list", [...]) → JSON array</text>
 
   <!-- Arrow 2->ForEach -->
-  <line x1="495" y1="294" x2="495" y2="320" stroke="#34D399" stroke-width="1.5" stroke-dasharray="4,3" marker-end="url(#arrowGreen)"/>
-  <text x="505" y="312" fill="#34D399" font-size="8">task values</text>
+  <line x1="495" y1="294" x2="495" y2="320" stroke="#00A972" stroke-width="1.5" stroke-dasharray="4,3" marker-end="url(#arrowGreen)"/>
+  <text x="505" y="312" fill="#00A972" font-size="8" font-weight="500">task values</text>
 
   <!-- For Each Container -->
-  <rect x="310" y="324" width="370" height="195" rx="8" fill="#111425" stroke="#7C3AED" stroke-width="1.5" stroke-dasharray="5,3"/>
-  <text x="495" y="344" text-anchor="middle" fill="#A78BFA" font-size="11" font-weight="700">FOR EACH TASK  (concurrency = 5)</text>
+  <rect x="310" y="324" width="370" height="195" rx="8" fill="#FAFBFC" stroke="#FF3621" stroke-width="1.5" stroke-dasharray="5,3"/>
+  <text x="495" y="344" text-anchor="middle" fill="#FF3621" font-size="11" font-weight="700">FOR EACH TASK  (concurrency = 5)</text>
 
   <!-- Parallel load boxes -->
-  <rect x="330" y="358" width="145" height="44" rx="6" fill="#1a1d2e" stroke="#374163" stroke-width="1"/>
-  <circle cx="348" cy="380" r="10" fill="url(#green)" opacity="0.8"/>
+  <rect x="330" y="358" width="145" height="44" rx="6" fill="#F5F7FA" stroke="#D8DFE6" stroke-width="1"/>
+  <circle cx="348" cy="380" r="10" fill="url(#dbGreen)"/>
   <text x="348" y="384" text-anchor="middle" fill="#fff" font-size="9" font-weight="700">3</text>
-  <text x="365" y="375" fill="#e2e8f0" font-size="9" font-weight="600">03_load_jdbc_table</text>
-  <text x="365" y="390" fill="#34D399" font-size="8">PARTITIONED (8-16 parts)</text>
+  <text x="365" y="375" fill="#1B3139" font-size="9" font-weight="600">03_load_jdbc_table</text>
+  <text x="365" y="390" fill="#00A972" font-size="8" font-weight="500">PARTITIONED (8-16 parts)</text>
 
-  <rect x="515" y="358" width="145" height="44" rx="6" fill="#1a1d2e" stroke="#374163" stroke-width="1"/>
-  <circle cx="533" cy="380" r="10" fill="url(#green)" opacity="0.8"/>
+  <rect x="515" y="358" width="145" height="44" rx="6" fill="#F5F7FA" stroke="#D8DFE6" stroke-width="1"/>
+  <circle cx="533" cy="380" r="10" fill="url(#dbGreen)"/>
   <text x="533" y="384" text-anchor="middle" fill="#fff" font-size="9" font-weight="700">3</text>
-  <text x="550" y="375" fill="#e2e8f0" font-size="9" font-weight="600">03_load_jdbc_table</text>
-  <text x="550" y="390" fill="#4DB8FF" font-size="8">SINGLE CONNECTION</text>
+  <text x="550" y="375" fill="#1B3139" font-size="9" font-weight="600">03_load_jdbc_table</text>
+  <text x="550" y="390" fill="#0078D4" font-size="8" font-weight="500">SINGLE CONNECTION</text>
 
   <!-- Table mapping inside for-each -->
-  <text x="335" y="420" fill="#6b7280" font-size="8">customer, sales_order_header,</text>
-  <text x="335" y="432" fill="#6b7280" font-size="8">sales_order_detail, address, product</text>
+  <text x="335" y="420" fill="#5A6B7B" font-size="8">customer, sales_order_header,</text>
+  <text x="335" y="432" fill="#5A6B7B" font-size="8">sales_order_detail, address, product</text>
 
-  <text x="520" y="420" fill="#6b7280" font-size="8">product_category, product_model,</text>
-  <text x="520" y="432" fill="#6b7280" font-size="8">product_description, customer_address,</text>
-  <text x="520" y="444" fill="#6b7280" font-size="8">product_model_product_description</text>
+  <text x="520" y="420" fill="#5A6B7B" font-size="8">product_category, product_model,</text>
+  <text x="520" y="432" fill="#5A6B7B" font-size="8">product_description, customer_address,</text>
+  <text x="520" y="444" fill="#5A6B7B" font-size="8">product_model_product_description</text>
 
   <!-- Parallel indicator -->
-  <text x="495" y="510" text-anchor="middle" fill="#A78BFA" font-size="9">up to 5 tables loading simultaneously</text>
+  <text x="495" y="510" text-anchor="middle" fill="#FF3621" font-size="9" font-weight="500">up to 5 tables loading simultaneously</text>
 
   <!-- Arrow: Workflow -> Target -->
-  <line x1="710" y1="310" x2="750" y2="310" stroke="#34D399" stroke-width="1.5" stroke-dasharray="6,4" marker-end="url(#arrowGreen)"/>
-  <text x="730" y="300" text-anchor="middle" fill="#34D399" font-size="8">Delta</text>
+  <line x1="710" y1="310" x2="750" y2="310" stroke="#00A972" stroke-width="1.5" stroke-dasharray="6,4" marker-end="url(#arrowGreen)"/>
+  <text x="730" y="300" text-anchor="middle" fill="#00A972" font-size="8" font-weight="500">Delta</text>
 
   <!-- ======================= TARGET (RIGHT) ======================= -->
-  <rect x="760" y="190" width="210" height="240" rx="10" fill="url(#card)" stroke="#2d3250" stroke-width="1" filter="url(#shadow)"/>
-  <rect x="760" y="190" width="210" height="32" rx="10" fill="url(#green)" opacity="0.12"/>
-  <text x="865" y="211" text-anchor="middle" fill="#34D399" font-size="11" font-weight="600">UNITY CATALOG</text>
-  <text x="865" y="240" text-anchor="middle" fill="#c8cfe0" font-size="10" font-weight="600">km_demo</text>
+  <rect x="760" y="190" width="210" height="240" rx="10" fill="url(#card)" stroke="#D8DFE6" stroke-width="1" filter="url(#shadow)"/>
+  <rect x="760" y="190" width="210" height="3" rx="1" fill="#00A972"/>
+  <rect x="760" y="190" width="210" height="32" rx="10" fill="#00A972" opacity="0.06"/>
+  <text x="865" y="211" text-anchor="middle" fill="#00A972" font-size="11" font-weight="600">UNITY CATALOG</text>
+  <text x="865" y="240" text-anchor="middle" fill="#1B3139" font-size="10" font-weight="600">km_demo</text>
 
   <!-- Sales schema -->
-  <rect x="778" y="254" width="174" height="72" rx="6" fill="#111425" stroke="#374163" stroke-width="1"/>
-  <text x="865" y="271" text-anchor="middle" fill="#FF6A4D" font-size="9" font-weight="600">sales</text>
-  <text x="788" y="286" fill="#8892a8" font-size="8">customer</text>
-  <text x="788" y="298" fill="#8892a8" font-size="8">sales_order_header</text>
-  <text x="788" y="310" fill="#8892a8" font-size="8">sales_order_detail</text>
-  <text x="788" y="322" fill="#8892a8" font-size="8">customer_address</text>
+  <rect x="778" y="254" width="174" height="72" rx="6" fill="#F5F7FA" stroke="#D8DFE6" stroke-width="1"/>
+  <text x="865" y="271" text-anchor="middle" fill="#FF3621" font-size="9" font-weight="600">sales</text>
+  <text x="788" y="286" fill="#5A6B7B" font-size="8">customer</text>
+  <text x="788" y="298" fill="#5A6B7B" font-size="8">sales_order_header</text>
+  <text x="788" y="310" fill="#5A6B7B" font-size="8">sales_order_detail</text>
+  <text x="788" y="322" fill="#5A6B7B" font-size="8">customer_address</text>
 
   <!-- Reference schema -->
-  <rect x="778" y="334" width="174" height="84" rx="6" fill="#111425" stroke="#374163" stroke-width="1"/>
-  <text x="865" y="351" text-anchor="middle" fill="#4DB8FF" font-size="9" font-weight="600">reference</text>
-  <text x="788" y="366" fill="#8892a8" font-size="8">address</text>
-  <text x="788" y="378" fill="#8892a8" font-size="8">product</text>
-  <text x="788" y="390" fill="#8892a8" font-size="8">product_category</text>
-  <text x="788" y="402" fill="#8892a8" font-size="8">product_model, product_description</text>
-  <text x="788" y="414" fill="#8892a8" font-size="8">product_model_product_description</text>
+  <rect x="778" y="334" width="174" height="84" rx="6" fill="#F5F7FA" stroke="#D8DFE6" stroke-width="1"/>
+  <text x="865" y="351" text-anchor="middle" fill="#0078D4" font-size="9" font-weight="600">reference</text>
+  <text x="788" y="366" fill="#5A6B7B" font-size="8">address</text>
+  <text x="788" y="378" fill="#5A6B7B" font-size="8">product</text>
+  <text x="788" y="390" fill="#5A6B7B" font-size="8">product_category</text>
+  <text x="788" y="402" fill="#5A6B7B" font-size="8">product_model, product_description</text>
+  <text x="788" y="414" fill="#5A6B7B" font-size="8">product_model_product_description</text>
 
   <!-- Footer -->
-  <text x="500" y="575" text-anchor="middle" fill="#4b5563" font-size="10">Serverless compute (environment_version 4) — no cluster provisioning required</text>
-  <text x="500" y="595" text-anchor="middle" fill="#4b5563" font-size="9">Partitioned reads use dynamic bounds (MIN/MAX) for even data distribution across JDBC connections</text>
+  <text x="500" y="575" text-anchor="middle" fill="#8C9BAB" font-size="10">Serverless compute (environment_version 4) — no cluster provisioning required</text>
+  <text x="500" y="595" text-anchor="middle" fill="#8C9BAB" font-size="9">Partitioned reads use dynamic bounds (MIN/MAX) for even data distribution across JDBC connections</text>
 </svg>
