@@ -13,7 +13,7 @@ JDBC_URL = (
     "database=AdventureWorksLT;encrypt=true;trustServerCertificate=false;loginTimeout=30;"
 )
 JDBC_USER = "adventureworks_reader"
-JDBC_PASSWORD = "***REDACTED***"
+JDBC_PASSWORD = dbutils.secrets.get(scope="jdbc", key="adventureworks-password")
 
 # COMMAND ----------
 

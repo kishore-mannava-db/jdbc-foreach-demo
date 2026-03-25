@@ -48,7 +48,7 @@ jdbc_url = (
     "database=AdventureWorksLT;encrypt=true;trustServerCertificate=false;loginTimeout=30;"
 )
 jdbc_user = "adventureworks_reader"
-jdbc_pass = "***REDACTED***"
+jdbc_pass = dbutils.secrets.get(scope="jdbc", key="adventureworks-password")
 
 DRIVER = "com.microsoft.sqlserver.jdbc.SQLServerDriver"
 
