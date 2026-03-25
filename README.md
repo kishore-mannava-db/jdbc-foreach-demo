@@ -206,3 +206,7 @@ adventureworks_parallel_load
 - **Serverless compute** (`environment_version: 4`) eliminates cluster startup time
 - **`for_each_task`** cannot have `environment_key` on the container task — only on the inner task
 - **Dynamic bounds** prevent skew in partitioned reads by querying actual `MIN`/`MAX` values
+
+## References
+
+- [Spark JDBC Data Source](https://spark.apache.org/docs/latest/sql-data-sources-jdbc.html) — partitioning options, connection properties, and performance tuning
